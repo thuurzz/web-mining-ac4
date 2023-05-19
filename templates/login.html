@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <h1>Página de login</h1>
+
+    <form method="POST" action=""> <!-- vamos criar uma acao com o método post... gracas a classe form que criamos, conseguiremos atribuir uma acao ao que for inputado pelo usuario -->
+        
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form>
+
+    <a href="{{ url_for('register') }}">Não tem uma conta? Registre-se</a> <!-- usando o url_for para ir a rota register-->
+</body>
+
+</html>
