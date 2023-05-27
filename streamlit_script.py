@@ -7,8 +7,9 @@ import numpy as np
 
 
 def run():
-    # Criando dataframe a partir dos dados extraídos na AC2
-    df = pd.read_csv("1_bases_tratadas/base_tratada.csv")
+    # Criando dataframe a partir do banco de dados que foi criado com o script de extração
+    df = pd.read_sql_table('jogos_nuuvem', 'sqlite:///./3_scripts/nuuvem.db')
+    df['porcentagem_desconto'] = df['porcentagem_desconto'].astype('int')
     df["preco_original"] = df["preco"] / (1 - (df["porcentagem_desconto"]/100))
     df["preco_original"] = round(df["preco_original"], 2)
     # -------------------------------------------------------
