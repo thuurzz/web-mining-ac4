@@ -6,9 +6,6 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 
-# import sqlalchemy as db
-# from sqlalchemy import create_engine
-
 
 app = Flask(__name__)
 
@@ -17,8 +14,6 @@ app.config['SECRET_KEY'] = 'thisisasecretkey'
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
-
-
 
 
 @app.before_request
