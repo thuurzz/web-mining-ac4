@@ -42,6 +42,16 @@
         max-width: 300px;
         margin: 20px auto;
       }
+
+      aside {
+        text-align: center;
+      }
+
+      .plus {
+        font-size: 60px;
+        font-weight: bold;
+        color: #333;
+      }
     </style>
   </head>
 
@@ -49,6 +59,13 @@
     <div class="container">
       <h1>Sistema de login<br />Flask + Dashboard StreamLit</h1>
       <img src="{{ url_for('static', filename='streamlit-logo.png') }}" /><br />
+      <div class="plus">+</div>
+      <img src="{{ url_for('static', filename='nuuvem.png') }}" /><br />
+      <aside>
+        Está aplicação realiza o scrapping de dados do site nuuvem.com e exibe um dashboard de
+        análise de preço dos jogos, DLC's, GiftCards e pacotes de jogos. <br/>
+        <h2>Para ter acesso ao Dashboard, você deverá realizar o cadastro e login no sistema.</h2>
+      </aside>
       <a href="{{ url_for('login') }}">Login Page</a>
       <a href="{{ url_for('register') }}">Register Page</a><br />
     </div>
