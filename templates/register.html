@@ -1,25 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-</head>
+    <style>
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
 
-<body>
-    <h1>Register Page</h1>
+      .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+      }
 
-    <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        {{ form.username }}
-        {{ form.password }}
-        {{ form.submit }}
-    </form>
+      h1 {
+        color: #333;
+      }
 
-    <a href="{{ url_for('login') }}">Já possui uma conta? Faça login</a> <!-- Usando o url for para criar um link que direciona para a rota de login-->
-    
-</body>
+      form {
+        margin: 20px auto;
+        width: 100%;
+        max-width: 300px;
+      }
 
+      input {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .submit {
+        cursor: pointer;
+        background-color: #333;
+        color: #fff;
+        border: none;
+      }
+
+      .submit:hover {
+        background-color: #444;
+      }
+
+      a {
+        display: inline-block;
+        margin: 20px auto;
+        padding: 10px;
+        border: 1px solid #333;
+        color: #333;
+        text-decoration: none;
+      }
+
+      a:hover {
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Página de registro</h1>
+
+      <form method="POST" action="">
+        {{ form.hidden_tag() }} {{ form.username(class='input') }} {{
+        form.password(class='input') }} {{ form.submit(class='submit') }}
+      </form>
+
+      <a href="{{ url_for('login') }}">Já possui uma conta? Faça login</a>
+    </div>
+  </body>
 </html>
