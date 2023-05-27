@@ -6,13 +6,25 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 
+# import sqlalchemy as db
+# from sqlalchemy import create_engine
+
+
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SECRET_KEY'] = 'thisisasecretkey'
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['SECRET_KEY'] = 'thisisasecretkey'
+
+
+
+@app.before_request
+def setup():
+    print("criando banco de dados na inicialização do app flask")
+    db.create_all()
 
 
 login_manager = LoginManager()
