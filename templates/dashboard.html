@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-</head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
 
-<body>
-    <h1>Bem vindo! Você está logado</h1>
-    <a href="{{url_for('logout')}}">Aperte aqui para deslogar</a> <!-- Assim que configuramos uma ação com flask ao clicar em algo -->
-    
-</body>
+      h1 {
+        color: #444;
+      }
 
+      a {
+        display: inline-block;
+        margin: 20px;
+        padding: 10px;
+        background-color: #0084ff;
+        color: white;
+        text-decoration: none;
+        border-radius: 3px;
+      }
+
+      a:hover {
+        background-color: #0056b3;
+      }
+
+      iframe {
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Bem vindo ao Dashboard! Você está logado</h1>
+    <iframe src="http://localhost:8501/" width="100%" height="800"></iframe>
+    <a href="{{url_for('logout')}}">Aperte aqui para deslogar</a>
+    <!-- Assim que configuramos uma ação com flask ao clicar em algo -->
+  </body>
 </html>
